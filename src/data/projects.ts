@@ -49,7 +49,7 @@ export const projects: Project[] = [
       "Мультивалютные счета",
       "Адаптивный дизайн",
     ],
-    demoUrl: "http://localhost:3004",
+    demoUrl: "https://swag-bank.vercel.app",
     image: "/projects/swag-bank.jpg",
   },
   {
@@ -69,28 +69,8 @@ export const projects: Project[] = [
       "Отзывы клиентов",
       "FAQ и контакты",
     ],
-    demoUrl: "http://localhost:3001",
+    demoUrl: "https://beauty-studio-phi.vercel.app",
     image: "/projects/beauty-studio.jpg",
-  },
-  {
-    title: "AKARI — ресторан японской кухни",
-    description:
-      "Сайт ресторана робатайки с меню на углях binchotan, галереей атмосферы и онлайн-бронированием столиков.",
-    slug: "amber-restaurant",
-    type: "website",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    iconName: "Globe",
-    accent: "#FF5225",
-    features: [
-      "Меню с фильтрацией по категориям",
-      "Галерея интерьера и блюд",
-      "Онлайн-бронирование столиков",
-      "Отзывы гостей",
-      "История ресторана",
-      "Адаптивный дизайн",
-    ],
-    demoUrl: "http://localhost:3005",
-    image: "/projects/amber-restaurant.jpg",
   },
   {
     title: "iPhone Revive — магазин б/у iPhone",
@@ -109,7 +89,7 @@ export const projects: Project[] = [
       "Быстрая доставка по РФ",
       "FAQ и контакты",
     ],
-    demoUrl: "http://localhost:3002",
+    demoUrl: "https://iphone-revive.vercel.app",
     image: "/projects/iphone-revive.jpg",
   },
   {
@@ -129,27 +109,8 @@ export const projects: Project[] = [
       "Гарантия до 90 дней",
       "Адаптивный дизайн",
     ],
-    demoUrl: "http://localhost:3003",
+    demoUrl: "https://mc-accounts-nine.vercel.app",
     image: "/projects/mc-accounts.jpg",
   },
-  {
-    title: "Языковая школа — онлайн-обучение",
-    description:
-      "Сайт языковой школы с каталогом курсов, расписанием занятий и записью на пробный урок.",
-    slug: "language-school",
-    type: "website",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    iconName: "Globe",
-    accent: "#9B4DFF",
-    features: [
-      "Каталог курсов и уровней",
-      "Расписание занятий",
-      "Запись на пробный урок",
-      "Команда преподавателей",
-      "Отзывы учеников",
-      "Адаптивный дизайн",
-    ],
-    demoUrl: "http://localhost:3006",
-    image: "/projects/language-school.jpg",
-  },
+
 ];
