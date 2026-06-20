@@ -35,7 +35,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://t.me/rocketly"
+            href="https://t.me/rocketlydev"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#00D4E8] text-[#060A1E] px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#00D4E8]/90 transition-all duration-200"
@@ -74,7 +74,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="https://t.me/rocketly"
+                href="https://t.me/rocketlydev"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}

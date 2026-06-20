@@ -153,7 +153,7 @@ export default function ServicesSection() {
                 </ul>
 
                 <a
-                  href="https://t.me/rocketly"
+                  href="https://t.me/rocketlydev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold transition-all duration-200 hover:gap-3"

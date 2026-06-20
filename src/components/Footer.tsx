@@ -18,7 +18,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-8">
             <a
-              href="https://t.me/rocketly"
+              href="https://t.me/rocketlydev"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 text-[#4D5E88] hover:text-[#00D4E8] text-sm transition-all duration-200 group"
@@ -26,7 +26,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-[rgba(0,212,232,0.06)] border border-[rgba(0,212,232,0.08)] flex items-center justify-center group-hover:border-[rgba(0,212,232,0.2)] transition-colors">
                 <MessageCircle size={15} />
               </div>
-              @rocketly
+              @rocketlydev
             </a>
             <a
               href="mailto:hello@rocketly.dev"

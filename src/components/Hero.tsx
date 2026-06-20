@@ -72,7 +72,7 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://t.me/rocketly"
+                href="https://t.me/rocketlydev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

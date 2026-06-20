@@ -7,8 +7,8 @@ const contacts = [
   {
     icon: MessageCircle,
     label: "Telegram",
-    value: "@rocketly",
-    href: "https://t.me/rocketly",
+    value: "@rocketlydev",
+    href: "https://t.me/rocketlydev",
     accent: "#00D4E8",
   },
   {

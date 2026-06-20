@@ -71,7 +71,7 @@ export default function RootLayout({
                     contactType: "sales",
                     availableLanguage: ["Russian"],
                   },
-                  sameAs: ["https://t.me/rocketly"],
+                  sameAs: ["https://t.me/rocketlydev"],
                 },
                 {
                   "@type": "WebSite",
