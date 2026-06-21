@@ -7,6 +7,8 @@ export default function ParallaxOrbs() {
   const posRef = useRef([{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }]);
 
   useEffect(() => {
+    if (window.innerWidth < 768) return;
+
     let rafId: number;
     let mx = 0;
     let my = 0;
@@ -53,19 +55,19 @@ export default function ParallaxOrbs() {
   }, []);
 
   return (
-    <>
+    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
       <div
         ref={(el) => { orbsRef.current[0] = el; }}
-        className="orb orb-cyan w-[800px] h-[800px] top-[-200px] left-[-200px]"
+        className="orb orb-cyan w-[400px] h-[400px] md:w-[800px] md:h-[800px] top-[-100px] md:top-[-200px] left-[-100px] md:left-[-200px]"
       />
       <div
         ref={(el) => { orbsRef.current[1] = el; }}
-        className="orb orb-purple w-[600px] h-[600px] bottom-[20%] right-[-100px]"
+        className="orb orb-purple w-[300px] h-[300px] md:w-[600px] md:h-[600px] bottom-[20%] right-[-50px] md:right-[-100px]"
       />
       <div
         ref={(el) => { orbsRef.current[2] = el; }}
-        className="orb orb-green w-[400px] h-[400px] top-[50%] left-[10%]"
+        className="orb orb-green w-[200px] h-[200px] md:w-[400px] md:h-[400px] top-[50%] left-[10%]"
       />
-    </>
+    </div>
   );
 }

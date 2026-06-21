@@ -20,8 +20,7 @@ export default function Header() {
       <div className="absolute inset-0 bg-[#060A1E]/80 backdrop-blur-xl border-b border-[rgba(0,212,232,0.06)]" />
       <nav className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 group">
-          <Image src="/icon.png" alt="Rocketly" width={28} height={27} className="h-7 sm:h-8 w-auto transition-all duration-300 group-hover:brightness-110 group-hover:opacity-90" />
-          <span className="text-white font-bold text-lg tracking-tight">Rocketly</span>
+          <Image src="/logo-horizontal.png" alt="Rocketly" width={167} height={94} className="h-14 sm:h-16 md:h-20 w-auto transition-all duration-300 group-hover:brightness-110 group-hover:opacity-90" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -35,18 +34,18 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://t.me/rocketlydev"
+            href="https://t.me/manager_rocketly"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#00D4E8] text-[#060A1E] px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#00D4E8]/90 transition-all duration-200"
           >
-            Написать в Telegram
+            Обсудить проект
           </a>
         </div>
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-[#D8E4FF] p-2"
+          className="md:hidden text-[#D8E4FF] p-3"
           aria-label="Меню"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -74,13 +73,13 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="https://t.me/rocketlydev"
+                href="https://t.me/manager_rocketly"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="block w-full text-center bg-[#00D4E8] text-[#060A1E] px-5 py-3 rounded-lg text-sm font-semibold"
               >
-                Написать в Telegram
+                Обсудить проект
               </a>
             </div>
           </motion.div>

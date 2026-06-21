@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Bot, Globe, Zap, CheckCircle } from "lucide-react";
@@ -14,6 +15,24 @@ export function generateStaticParams() {
   return projects
     .filter((p) => p.type === "website" && p.demoUrl?.startsWith("/demo/"))
     .map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return { title: "Демо-проект · Rocketly" };
+  return {
+    title: `${project.title} · Демо · Rocketly`,
+    description: project.description,
+    openGraph: {
+      title: `${project.title} · Демо-проект Rocketly`,
+      description: project.description,
+      type: "website",
+    },
+    robots: { index: false, follow: false },
+  };
 }
 
 export default async function DemoPage(props: {
@@ -33,11 +52,11 @@ export default async function DemoPage(props: {
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#060A1E]/90 backdrop-blur-xl border-b border-[rgba(0,212,232,0.06)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <Link
-            href={`/projects/${project.slug}`}
+            href="/#portfolio"
             className="flex items-center gap-2 text-sm text-[#4D5E88] hover:text-[#00D4E8] transition-colors"
           >
             <ArrowLeft size={16} />
-            К кейсу проекта
+            Вернуться к портфолио
           </Link>
           <div className="flex items-center gap-2 text-sm">
             <span className="text-[#4D5E88]">Rocketly</span>
@@ -50,13 +69,9 @@ export default async function DemoPage(props: {
       <div className="pt-14">
         {params.slug === "swag-bank" && <SwagBankDemo project={project} Icon={Icon} />}
         {params.slug === "beauty-studio" && <BeautyStudioDemo project={project} Icon={Icon} />}
-        {params.slug === "amber-restaurant" && <RestaurantDemo project={project} Icon={Icon} />}
         {params.slug === "iphone-revive" && <IPhoneReviveDemo project={project} Icon={Icon} />}
         {params.slug === "mc-accounts" && <MCAccountsDemo project={project} Icon={Icon} />}
-        {params.slug === "language-school" && <LanguageSchoolDemo project={project} Icon={Icon} />}
-        {!["swag-bank","beauty-studio","amber-restaurant","iphone-revive","mc-accounts","language-school"].includes(params.slug) && (
-          <PlaceholderDemo project={project} Icon={Icon} />
-        )}
+        <PlaceholderDemo project={project} Icon={Icon} />
       </div>
     </div>
   );
@@ -84,11 +99,11 @@ function PlaceholderDemo({
           портфолио Rocketly.
         </p>
         <a
-          href={`/projects/${project.slug}`}
+          href="/#portfolio"
           className="inline-flex items-center gap-2 text-sm font-medium text-[#00D4E8] hover:gap-3 transition-all"
         >
           <ArrowLeft size={16} />
-          Вернуться к кейсу
+          Вернуться к портфолио
         </a>
       </div>
     </section>
@@ -198,8 +213,17 @@ function CTASection({ project }: { project: Project }) {
 function DemoFooter() {
   return (
     <footer className="border-t border-[rgba(0,212,232,0.06)] py-8">
-      <div className="max-w-6xl mx-auto px-4 text-center text-xs text-[#2C3558]">
-        Rocketly &middot; Демо-проект &middot; 2026
+      <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#2C3558]">
+        <span>Rocketly &middot; Демо-проект &middot; 2026</span>
+        <a
+          href="https://t.me/manager_rocketly"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-[#4D5E88] hover:text-[#00D4E8] transition-colors"
+        >
+          <span>Дизайн и разработка сайта —</span>
+          <span className="font-semibold gradient-text">Rocketly</span>
+        </a>
       </div>
     </footer>
   );
@@ -362,29 +386,3 @@ function MCAccountsDemo({ project, Icon }: { project: Project; Icon: typeof Glob
   );
 }
 
-function LanguageSchoolDemo({ project, Icon }: { project: Project; Icon: typeof Globe }) {
-  return (
-    <div>
-      <DemoHero project={project} Icon={Icon} accentBg="from-[rgba(155,77,255,0.04)] to-transparent" />
-      <section className="py-20 bg-[rgba(155,77,255,0.02)]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: "Курсы и уровни", desc: "От A1 до C2 — каталог курсов с программой обучения и целями", accent: "#9B4DFF" },
-              { title: "Расписание", desc: "Удобный просмотр расписания с записью на свободное место", accent: "#00D4E8" },
-              { title: "Преподаватели", desc: "Карточки преподавателей с опытом, специализацией и отзывами", accent: "#00E67A" },
-            ].map((f) => (
-              <div key={f.title} className="glass-premium rounded-xl p-6 text-center">
-                <h3 className="text-white font-semibold mb-2" style={{ color: f.accent }}>{f.title}</h3>
-                <p className="text-[#4D5E88] text-sm">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <FeaturesSection project={project} />
-      <CTASection project={project} />
-      <DemoFooter />
-    </div>
-  );
-}

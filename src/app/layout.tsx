@@ -5,6 +5,7 @@ const siteUrl = "https://rocketly.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: siteUrl },
   title: "Rocketly | Сайты, Telegram-боты и автоматизация бизнеса",
   description:
     "Разрабатываем сайты, Telegram-ботов и решения для автоматизации бизнеса. Запуск проектов от 2 до 5 дней. Работаем по всей России.",
@@ -52,6 +53,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        />
+        <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
@@ -65,13 +71,13 @@ export default function RootLayout({
                   "@type": "Organization",
                   name: "Rocketly",
                   url: siteUrl,
-                  logo: `${siteUrl}/icon.png`,
+                  logo: `${siteUrl}/logo-horizontal.png`,
                   contactPoint: {
                     "@type": "ContactPoint",
                     contactType: "sales",
                     availableLanguage: ["Russian"],
                   },
-                  sameAs: ["https://t.me/rocketlydev"],
+                  sameAs: ["https://t.me/manager_rocketly"],
                 },
                 {
                   "@type": "WebSite",
@@ -80,6 +86,57 @@ export default function RootLayout({
                   description:
                     "Разрабатываем сайты, Telegram-ботов и решения для автоматизации бизнеса.",
                   inLanguage: "ru-RU",
+                },
+                {
+                  "@type": "Service",
+                  serviceType: "Разработка Telegram-ботов и сайтов",
+                  provider: { "@id": `${siteUrl}#org` },
+                  areaServed: "RU",
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Услуги Rocketly",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Telegram-бот",
+                        },
+                        priceSpecification: {
+                          "@type": "PriceSpecification",
+                          priceCurrency: "RUB",
+                          minPrice: 3500,
+                          description: "от 3 500 ₽, запуск за 2–3 дня",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Сайт",
+                        },
+                        priceSpecification: {
+                          "@type": "PriceSpecification",
+                          priceCurrency: "RUB",
+                          minPrice: 10000,
+                          description: "от 10 000 ₽, запуск за 3–4 дня",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Сайт + Telegram-бот",
+                        },
+                        priceSpecification: {
+                          "@type": "PriceSpecification",
+                          priceCurrency: "RUB",
+                          minPrice: 15000,
+                          description: "от 15 000 ₽, запуск за 5–7 дней",
+                        },
+                      },
+                    ],
+                  },
                 },
               ],
             }),
