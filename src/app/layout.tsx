@@ -102,20 +102,46 @@ export default function RootLayout({
                         "@type": "Offer",
                         itemOffered: {
                           "@type": "Service",
-                          name: "Telegram-бот",
+                          name: "Telegram-бот Start",
                         },
                         priceSpecification: {
                           "@type": "PriceSpecification",
                           priceCurrency: "RUB",
-                          minPrice: 3500,
-                          description: "от 3 500 ₽, запуск за 2–3 дня",
+                          minPrice: 5000,
+                          description: "от 5 000 ₽, запуск за 2–3 дня",
                         },
                       },
                       {
                         "@type": "Offer",
                         itemOffered: {
                           "@type": "Service",
-                          name: "Сайт",
+                          name: "Telegram-бот Middle",
+                        },
+                        priceSpecification: {
+                          "@type": "PriceSpecification",
+                          priceCurrency: "RUB",
+                          minPrice: 12000,
+                          description: "от 12 000 ₽, запуск за 4–5 дней",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Telegram-бот Ultra",
+                        },
+                        priceSpecification: {
+                          "@type": "PriceSpecification",
+                          priceCurrency: "RUB",
+                          minPrice: 25000,
+                          description: "от 25 000 ₽, запуск за 7–10 дней",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Сайт Start",
                         },
                         priceSpecification: {
                           "@type": "PriceSpecification",
@@ -128,13 +154,26 @@ export default function RootLayout({
                         "@type": "Offer",
                         itemOffered: {
                           "@type": "Service",
-                          name: "Сайт + Telegram-бот",
+                          name: "Сайт Middle",
                         },
                         priceSpecification: {
                           "@type": "PriceSpecification",
                           priceCurrency: "RUB",
-                          minPrice: 15000,
-                          description: "от 15 000 ₽, запуск за 5–7 дней",
+                          minPrice: 20000,
+                          description: "от 20 000 ₽, запуск за 5–7 дней",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Сайт + Telegram-бот Middle",
+                        },
+                        priceSpecification: {
+                          "@type": "PriceSpecification",
+                          priceCurrency: "RUB",
+                          minPrice: 28800,
+                          description: "от 28 800 ₽, запуск за 8–10 дней",
                         },
                       },
                     ],

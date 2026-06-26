@@ -77,7 +77,7 @@ export default function Hero() {
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.05] tracking-tight text-white mb-5">
               Telegram-боты и сайты <br />
               <span className="text-[#4D5E88]">от</span>{" "}
-              <span className="gradient-text">3 500 ₽</span>
+              <span className="gradient-text">5 000 ₽</span>
             </h1>
 
             <p className="text-base sm:text-lg text-[#4D5E88] leading-relaxed max-w-xl mb-6">
